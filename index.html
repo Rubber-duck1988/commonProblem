@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    /*纵向打印*/
+    @page { size: portrait;}
+    /*纵向打印   @page { size: landscape;} */
+    .table{
+        display: table;
+    }
+</style>
+<body>
+<button onclick="onPrint()">打印</button>
+<div class="print">
+    打印内容
+</div>
+</body>
+<script src="/jquery/jquery.min.js"></script>
+<script src="/jquery/jquery.Json.js"></script>
+
+<!--外部插件print-->
+<script src="/js/jquery.jqprint-0.3.js"></script>
+<script src="/js/jquery-migrate-1.1.0.js"></script>
+<script src="/js/exportPrint.js"></script>
+<script>
+    function onPrint() {
+      // 增加table样式 选择横向打印的时候就不会多一个空白页
+      $('body').addClass('table')
+      window.print()
+      $('body').removeClass('table')
+    }
+
+
+
+</script>
+</html>
