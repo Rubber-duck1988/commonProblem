@@ -13,7 +13,7 @@
     }
 </style>
 <body>
-<button onclick="onPrint()">打印</button>
+<button id="btn" onclick="onPrint()">打印</button>
 <div class="print">
     打印内容
 </div>
@@ -28,9 +28,11 @@
 <script>
     function onPrint() {
       // 增加table样式 选择横向打印的时候就不会多一个空白页
-      $('body').addClass('table')
+      // $('body').addClass('table')
+      // $('#btn').hide()
       window.print()
-      $('body').removeClass('table')
+      // $('#btn').show()
+      // $('body').removeClass('table')
     }
 
 
